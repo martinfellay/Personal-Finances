@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Balance | by: Martin Fellay (Challenge JS)</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <header>
+        <nav id="home">
+            <a class="logo" href="../index.html"><h1>PERSONAL FINANCES</h1></a>
+            <div class="nav-menu">
+                <a href="#about">About</a>
+                <a href="#formContact">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="task">
+                <div class="list">
+                    <table class="operations">
+                        <thead>
+                            <th>Concept</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                        </thead>
+                        <tbody id="row">
+                            <tr>
+                                <td>
+                                    example
+                                </td>
+                                <td>
+                                    20/05/2005
+                                </td>
+                                <td>
+                                    in
+                                </td>
+                                <td>
+                                    1000
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="newOperacion">
+                        <form id="formList" action="/assets/data/operations.json" method="POST">
+                            <div class="form">
+                                <input name="concept" type="text" id="concept" placeholder="concept" alt="text">
+                            </div>
+                            <input name="date" type="date" id="date">
+                            <div class="form">
+                                <select name="type" id="type">
+                                    <option value="in" selected>In</option>
+                                    <option value="out">Out</option>
+                                </select>
+                            </div>
+                            <div class="form">
+                                <input name="amount" type="number" id="amount" placeholder="amount in $">
+                            </div>
+                            <output name="amountOut" for="amount"></output>
+                            <button type="submit" id="addList">+</button>
+                        </form>
+                    </div>
+                </div>
+                <button class="btn" id="calculate" >
+                    CALCULATE
+                </button>
+        </section>
+        <section class="result">
+                <div class="grafic"></div>
+                <h3 class="total">Total= <span id="total"></span></h3>
+        </section>
+    </main>
+    <footer  id="about">
+        <section class="about">
+            <div class="card">
+                <h3>Hi!</h3>
+                <p>Mi name is <a href="https://linkedin.com/in/martinfellay" target="_blank">Martin Fellay</a>. <br>I'm a Front End Developer from Quilmes, province of Buenos Aires, Argentina.</p><br>
+            </div>
+            <p class="sub">Developing this app for a challenge with <a href="https://alkemy.org" target="_blank">Alkemy</a> program! <br>
+                2021 - Free Copyright.</p>
+        </section>
+        <form id="formContact">
+            <div class="form">
+                <label for="email"> Your Mail</label><br>
+                <input type="mail" name="mail" id="mail" placeholder="your mail">
+            </div>
+            <div class="form">
+                <label for="message"> Leave Me Your Message</label><br>
+                <textarea name="message" id="message" placeholder="your message…" form="formContact"></textarea>
+            </div>
+            <button class="btn" type="submit" id="send">Send</button>
+        </form>
+    </footer>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
