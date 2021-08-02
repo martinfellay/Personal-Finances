@@ -12,7 +12,7 @@
 
 // const fetch = require("node-fetch");
 function loadList () {
-    fetch('/Personal-Finances/tree/gh-pages/assets/data/operations.json')
+    fetch('/Personal-Finances/assets/data/operations.json')
     .then(data => data.json())
     .then(data=> {
         drawTable (data);
@@ -44,7 +44,7 @@ function formContactPrevent () {
         console.log(JSON.stringify(_mail));
         console.log(JSON.stringify(_message));
 
-        fetch('/Personal-Finances/tree/gh-pages/assets/data/form.json',
+        fetch('/Personal-Finances/assets/data/form.json',
         {
             method:'post',
             body: _mail
@@ -70,7 +70,7 @@ formList.addEventListener('submit', (e) =>{
     console.log(list.get('type'));
     console.log(list.get('amount'));
 
-    fetch('/Personal-Finances/tree/gh-pages/assets/data/operations.json',{
+    fetch('/Personal-Finances/assets/data/operations.json',{
         method:'POST'
     })
     .then(data => data.json())
@@ -104,7 +104,7 @@ function drawTable(data){
 //BRING VALUES FROM JSON AND SUM
 var allTotal=0
 function sum () {
-    fetch('/Personal-Finances/tree/gh-pages/assets/data/operations.json')
+    fetch('/Personal-Finances/assets/data/operations.json')
 .then(data => data.json())
 .then(data => {
         for(let i of data){
